@@ -1,0 +1,156 @@
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+/* Grid de Productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Carrito */
+.seccion-carrito {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.item-detalles h4 {
+    font-size: 0.95rem;
+}
+
+.item-controles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-controles input {
+    width: 50px;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+/* Botones */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-agregar {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem;
+    width: 100%;
+}
+
+.btn-agregar:hover { background-color: var(--primary-hover); }
+
+.btn-eliminar {
+    background-color: transparent;
+    color: var(--danger);
+    padding: 0.2rem 0.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-eliminar:hover { color: var(--danger-hover); }
+
+.carrito-resumen {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.btn-vaciar {
+    background-color: var(--danger);
+    color: white;
+    padding: 0.6rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-vaciar:hover { background-color: var(--danger-hover); }
+.cargando { color: #64748b; font-style: italic; }
