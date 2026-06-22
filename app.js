@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 async function obtenerProductos() {
     try {
         const res = await fetch(`${API_URL}/api/products`);
-        const { data } = await res.json()
+        const { data } = await res.json();
+        
         
         
         contenedorProductos.innerHTML = '';
@@ -34,6 +35,9 @@ async function obtenerProductos() {
             `;
             contenedorProductos.appendChild(card);
         });
+
+        const primerProducto = document.querySelector('#contenedor-productos .producto-card:nth-child(1) button');
+        console.log(primerProducto);
     } catch (error) {
         contenedorProductos.innerHTML = '<p class="danger">Error al conectar con el servidor.</p>';
         console.error(error);
@@ -138,7 +142,7 @@ async function eliminarDelCarrito(carritoId) {
 btnVaciar.addEventListener('click', async () => {
     if (!confirm('¿Estás seguro de que deseas vaciar el carrito?')) return;
     try {
-        await fetch(`${API_URL}/api/carrito/vaciar`, { method: 'POST' });
+        await fetch(`${API_URL}/api/carrito/vaciar`, { method: 'DELETE' });
         obtenerCarrito();
     } catch (error) {
         console.error(error);
