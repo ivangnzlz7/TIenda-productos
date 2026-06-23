@@ -128,10 +128,10 @@ async function actualizarCantidad(carritoId, nuevaCantidad) {
     }
 }
 
-// 5. Eliminar un producto del carrito (DELETE)
+// 5. Eliminar un producto del carrito (PUT)
 async function eliminarDelCarrito(carritoId) {
     try {
-        await fetch(`${API_URL}/api/carrito/eliminar/${carritoId}`, { method: 'DELETE' });
+        await fetch(`${API_URL}/api/carrito/eliminar/${carritoId}`, { method: 'PUT' });
         obtenerCarrito();
     } catch (error) {
         console.error(error);
